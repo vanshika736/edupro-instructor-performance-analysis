@@ -15,9 +15,9 @@ st.set_page_config(
 def load_data():
     file_path = "EduPro Online Platform.xlsx"
     try:
-        teachers = pd.read_excel(file_path, sheet_name="Teachers")
-        courses = pd.read_excel(file_path, sheet_name="Courses")
-        transactions = pd.read_excel(file_path, sheet_name="Transactions")
+        teachers = pd.read_excel(EduPro Online Platform.xlsx, sheet_name="Teachers")
+        courses = pd.read_excel(EduPro Online Platform.xlsx, sheet_name="Courses")
+        transactions = pd.read_excel(EduPro Online Platform.xlsx, sheet_name="Transactions")
     except Exception:
         # Fallback dummy data generation if file is missing in repo during initial build
         teachers = pd.DataFrame({
@@ -36,13 +36,7 @@ def load_data():
             "CourseLevel": np.random.choice(["Beginner", "Intermediate", "Advanced"], 60),
             "CourseRating": np.round(np.random.uniform(2.0, 5.0, 60), 2),
             "CoursePrice": np.random.choice([0.0, 49.99, 99.99, 199.99], 60)
-        })
-        transactions = pd.DataFrame({
-            "TransactionID": [f"TT{i:05d}" for i in range(1, 501)],
-            "TeacherID": np.random.choice(teachers["TeacherID"], 501),
-            "CourseID": np.random.choice(courses["CourseID"], 501),
-            "Amount": np.random.choice([0.0, 49.99, 99.99], 501)
-        })
+        
 
     # Enrollments calculation per teacher
     enrollments = transactions.groupby("TeacherID").size().reset_index(name="EnrollmentCount")
