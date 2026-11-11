@@ -1,5 +1,4 @@
 from pathlib import Path
-
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -16,9 +15,9 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path("EduPro Online Platform.xlsx").resolve().parent
 DATA_CANDIDATES = [
-    BASE_DIR / "EduPro_Platform_Sanitized.xlsx",
+    BASE_DIR / "EduPro Online Platform.xlsx",
     BASE_DIR / "EduPro Online Platform.xlsx",
     BASE_DIR / "EduPro_Instructor_Performance_Dashboard.xlsx",
 ]
