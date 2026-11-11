@@ -15,9 +15,9 @@ st.set_page_config(
 def load_data():
     file_path = "EduPro Online Platform.xlsx"
     try:
-        teachers = pd.read_excel(EduPro Online Platform.xlsx, sheet_name="Teachers")
-        courses = pd.read_excel(EduPro Online Platform.xlsx, sheet_name="Courses")
-        transactions = pd.read_excel(EduPro Online Platform.xlsx, sheet_name="Transactions")
+       teachers = pd.read_excel("EduPro Online Platform.xlsx", sheet_name="Teachers")
+        courses = pd.read_excel("EduPro Online Platform.xlsx", sheet_name="Courses")
+ transactions = pd.read_excel("EduPro Online Platform.xlsx", sheet_name="Transactions")
     except Exception:
         # Fallback dummy data generation if file is missing in repo during initial build
         teachers = pd.DataFrame({
